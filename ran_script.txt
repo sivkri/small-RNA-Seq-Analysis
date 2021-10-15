@@ -1,0 +1,1000 @@
+ 1001  cd ..
+ 1002  head Arabidopsis_thaliana.TAIR10.dna.toplevel.fa 
+ 1003  sed -i 's/ /_/g' Arab_thali.fa 
+ 1004  head Arab_thali.fa 
+ 1005  gawk 'BEGIN{line=0}{ if ($0 !~/^>/ && $0 ~/ +/ ) {gsub(/ +/, //); line++} print}END{print line" lines with white spaces treated" > "/dev/stderr"}' Arabidopsis_thaliana.TAIR10.fa > Arab_thali.fa
+ 1006  sudo apt install gawt
+ 1007  sudo apt install gawk
+ 1008  gawk 'BEGIN{line=0}{ if ($0 !~/^>/ && $0 ~/ +/ ) {gsub(/ +/, //); line++} print}END{print line" lines with white spaces treated" > "/dev/stderr"}' Arabidopsis_thaliana.TAIR10.fa > Arab_thali.fa
+ 1009  head Arab_thali.fa 
+ 1010  perl -i.bak -pe "s/\s+$/\n/;" Arab_thali.fa 
+ 1011  head Arab_thali.fa
+ 1012  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed1.fa Arabidopsis_thaliana.TAIR10.fasta Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf mature_T.fa none hairpin_T.fa 2> wt-ABA-3_report.log
+ 1013  cd Mirdeep_miRNA/
+ 1014  head wt-ABA-3_collapsed1.fa 
+ 1015  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.fasta Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf mature_T.fa none hairpin_T.fa 2> wt-ABA-3_report.log
+ 1016  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.fasta Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf mature_T.fa none hairpin_T.fa
+ 1017  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.fasta Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf mature_T.fa none none
+ 1018  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.fasta Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none  none none
+ 1019  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fasta Arabidopsis_thaliana.TAIR10.fasta Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none  none none
+ 1020  ls
+ 1021  head wt-ABA-3_collapsed.fasta 
+ 1022  head wt-ABA-3_collapsed1.fasta 
+ 1023  sed -i 's/x/x /g' wt-ABA-3_collapsed1.fasta 
+ 1024  head wt-ABA-3_collapsed1.fasta 
+ 1025  cd ..
+ 1026  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed1.fastaa Arabidopsis_thaliana.TAIR10.fasta Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none  none none
+ 1027  cd ..
+ 1028  cd microRNA_data/
+ 1029  sanity_check_genome.pl Arab_thali.fa
+ 1030  remove_white_space_in_id.pl Arab_thali.fa
+ 1031  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fasta Arab_thali.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none  none none
+ 1032  head Arab_thali.fa
+ 1033  cd Documents/
+ 1034  cd microRNA_data/
+ 1035  ls -l
+ 1036  cd ..
+ 1037  ls -l
+ 1038  perl -MCPAN -e shell
+ 1039  sudo perl -MCPAN -e shell
+ 1040  curl -L http://xrl.us/installperlnix | bash
+ 1041  exit
+ 1042  perl -v
+ 1043  cpan App::cpanminus
+ 1044  perl -MCPAN -e shell
+ 1045  sudo perl -MCPAN -e shell
+ 1046  sudo apt-get install libterm-readline-gnu-perlsudo apt-get install libterm-readline-gnu-perl
+ 1047  sudo apt-get install libterm-readline-gnu-perl
+ 1048  perl -MCPAN -e shell
+ 1049  sudo perl -MCPAN -e shell
+ 1050  celar
+ 1051  clear
+ 1052  whereis htseq-count
+ 1053  ls
+ 1054  whereis python
+ 1055  whereis mirdeep2
+ 1056  whereis htseq-count
+ 1057  clear
+ 1058  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./miRNA -s null -a 'null' -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other 'null' -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1059  ls -l
+ 1060  cd mirPRo.1.1.4/
+ 1061  clear
+ 1062  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./miRNA -s null -a 'null' -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other 'null' -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1063  cd ..
+ 1064  ls -l
+ 1065  cd mirdeep2/
+ 1066  clear
+ 1067  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf mature_T.fa none hairpin_T.fa 2> wt-ABA-3_report.log
+ 1068  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf mature_T.fa none hairpin_T.fa
+ 1069  clear
+ 1070  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1071  Error:  Perl PDF::API2 package not found
+ 1072  sudo cpan PDF::API2
+ 1073  make_html.pl
+ 1074  clear
+ 1075  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1076  clear
+ 1077  cd mirdeep2/
+ 1078  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1079  cd ..
+ 1080  clear
+ 1081  ls -l
+ 1082  cd mirPRo.1.1.4/
+ 1083  clear
+ 1084  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./miRNA -s null -a 'null' -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other 'null' -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1085  samtools -version
+ 1086  cd ..
+ 1087  ls -l
+ 1088  cd samtools-1.9/
+ 1089  ls -l
+ 1090  make
+ 1091  pwd
+ 1092  /home/siva/samtools-1.9
+ 1093  export PATH=$PATH: /home/siva/samtools-1.9
+ 1094  cd ..
+ 1095  cd mirPRo.1.1.4/
+ 1096  ls
+ 1097  clear
+ 1098  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./miRNA -s null -a 'null' -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other 'null' -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1099  clear
+ 1100  cd ..
+ 1101  ls
+ 1102  ls -l
+ 1103  clear
+ 1104  git clone https://github.com/jehandzlik/Manatee.git
+ 1105  cd Manatee/
+ 1106  ls -l
+ 1107  ./config
+ 1108  sudo ./config
+ 1109  cpan
+ 1110  sudo cpan
+ 1111  Manatee -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -o /home/siva/Documents/microRNA_data/Manatee -index /home/siva/Documents/microRNA_data/bowtie_index/arabidopsis_genome -genome /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa  -annotation /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf
+ 1112  ls -l
+ 1113  clear
+ 1114  manatee -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -o /home/siva/Documents/microRNA_data/Manatee -index /home/siva/Documents/microRNA_data/bowtie_index/arabidopsis_genome -genome /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa  -annotation /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf
+ 1115  cd ..
+ 1116  mkdir samtools
+ 1117  ls -l
+ 1118  cd samtools
+ 1119  make
+ 1120  cd ..
+ 1121  cd samtools-1.9/
+ 1122  make
+ 1123  make install
+ 1124  sudo make install
+ 1125  cd ..
+ 1126  cd Manatee/
+ 1127  clear
+ 1128  manatee -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -o /home/siva/Documents/microRNA_data/Manatee -index /home/siva/Documents/microRNA_data/bowtie_index/arabidopsis_genome -genome /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa  -annotation /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf
+ 1129  nano manatee 
+ 1130  pwd
+ 1131  cpan App::cpanminus
+ 1132  sudo cpan App::cpanminus
+ 1133  ls -l
+ 1134  chmod 755 unitas/
+ 1135  cd unitas/
+ 1136  clear
+ 1137  ls -l
+ 1138  unitas_1.7.0.pl -h
+ 1139  perl unitas_1.7.0.pl 
+ 1140  cpan
+ 1141  clear
+ 1142  perl unitas_1.7.0.pl 
+ 1143  perl -v
+ 1144  perl unitas_1.7.0.pl 
+ 1145  cpan
+ 1146  sudo cpan
+ 1147  perl unitas_1.7.0.pl 
+ 1148  sudo cpan
+ 1149  perl unitas_1.7.0.pl 
+ 1150  ls -l
+ 1151  cd mirdeep2/
+ 1152  ls 
+ 1153  clear
+ 1154  ls -l
+ 1155  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa \ 
+ 1156  Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf mature_T.fa none hairpin_T.fa
+ 1157  cd ..
+ 1158  cd Documents/
+ 1159  clear
+ 1160  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa \ 
+ 1161  Arabidopsis_thaliana.TAIR10.dna.toplevel.fa \ 
+ 1162  Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf \ 
+ 1163  cd microRNA_data/
+ 1164  clear
+ 1165  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa \ 
+ 1166  Arabidopsis_thaliana.TAIR10.dna.toplevel.fa \ 
+ 1167  Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf \ 
+ 1168  clear
+ 1169  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1170  cd ..
+ 1171  cd mirdeep2/
+ 1172  ls
+ 1173  perl install.pl
+ 1174  install.pl
+ 1175  perl install.pl
+ 1176  cd ..
+ 1177  cd Documents/microRNA_data/
+ 1178  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1179  cd Documents/microRNA_data/
+ 1180  clear
+ 1181  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1182  cd ..
+ 1183  tar xvvzf PDF-API2-0.73.tar.gz 
+ 1184  cd PDF-API2-0.73/
+ 1185  whereis miRDeep2
+ 1186  perl Makefile.PL INSTALL_BASE= /home/siva/mirdeep2/bin/miRDeep2.pl LIB= /home/siva/mirdeep2/bin/miRDeep2.pl/lib
+ 1187  perl Makefile.PL INSTALL_BASE= /home/siva/mirdeep2/bin/miRDeep2.pl LIB= /home/siva/mirdeep2/lib
+ 1188  perl Makefile.PL INSTALL_BASE= /home/siva/mirdeep2/ LIB= /home/siva/mirdeep2/lib
+ 1189  cd ..
+ 1190  cd PDF-API2-0.73/
+ 1191  echo $PATH
+ 1192  cd ..
+ 1193  git clone https://github.com/BenLangmead/bowtie.git
+ 1194  cd bowtie/
+ 1195  echo $PATH
+ 1196  bowtie -version
+ 1197  whereis bowtie
+ 1198  whereis mirdeep2
+ 1199  cd ..
+ 1200  whereis mirdeep2
+ 1201  cd mirdeep2/
+ 1202  echo $PATH
+ 1203  echo $PATH &>PATH
+ 1204  cd ..
+ 1205  whereis Vienna
+ 1206  cd ViennaRNA-2.4.16/
+ 1207  echo $PATH
+ 1208  pwd
+ 1209  ls
+ 1210  cd ..
+ 1211  cd randfold_src/
+ 1212  pwd
+ 1213  cd ..
+ 1214  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/bin' >> ~/.bashrc
+ 1215  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/perls/perl-5.28.0/bin' >> ~/.bashrc
+ 1216  echo 'export PATH=$PATH:/home/siva/anaconda3/bin' >> ~/.bashrc
+ 1217  echo 'export PATH=$PATH:/home/siva/anaconda3/condabin' >> ~/.bashrc
+ 1218  echo 'export PATH=$PATH:/home/siva/novocraft' >> ~/.bashrc
+ 1219  echo 'export PATH=$PATH:/home/siva/mirPRo.1.1.4/bin' >> ~/.bashrc
+ 1220  echo 'export PATH=$PATH:/usr/bin/htseq-count' >> ~/.bashrc
+ 1221  echo 'export PATH=$PATH:/home/siva/mirdeep2/src' >> ~/.bashrc
+ 1222  echo 'export PATH=$PATH:/home/siva/samtools-1.9' >> ~/.bashrc
+ 1223  echo '/home/siva/ViennaRNA-2.4.16/bin' >> ~/.bashrc
+ 1224  echo '/home/siva/randfold_src' >> ~/.bashrc
+ 1225  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/bin' >> ~/.bashrc
+ 1226  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/perls/perl-5.28.0/bin' >> ~/.bashrc
+ 1227  echo 'export PATH=$PATH:/home/siva/anaconda3/bin' >> ~/.bashrc
+ 1228  echo 'export PATH=$PATH:/home/siva/anaconda3/condabin' >> ~/.bashrc
+ 1229  echo 'export PATH=$PATH:/home/siva/novocraft' >> ~/.bashrc
+ 1230  echo 'export PATH=$PATH:/home/siva/mirPRo.1.1.4/bin' >> ~/.bashrc
+ 1231  echo 'export PATH=$PATH:/usr/bin/htseq-count' >> ~/.bashrc
+ 1232  echo 'export PATH=$PATH:/home/siva/mirdeep2/src' >> ~/.bashrc
+ 1233  echo 'export PATH=$PATH:/home/siva/samtools-1.9' >> ~/.bashrc
+ 1234  echo '/home/siva/ViennaRNA-2.4.16/bin' >> ~/.bashrc
+ 1235  echo '/home/siva/randfold_src' >> ~/.bashrc
+ 1236  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/bin' >> ~/.bashrc
+ 1237  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/perls/perl-5.28.0/bin' >> ~/.bashrc
+ 1238  echo 'export PATH=$PATH:/home/siva/anaconda3/bin' >> ~/.bashrc
+ 1239  echo 'export PATH=$PATH:/home/siva/anaconda3/condabin' >> ~/.bashrc
+ 1240  echo 'export PATH=$PATH:/home/siva/novocraft' >> ~/.bashrc
+ 1241  echo 'export PATH=$PATH:/home/siva/mirPRo.1.1.4/bin' >> ~/.bashrc
+ 1242  echo 'export PATH=$PATH:/usr/bin/htseq-count' >> ~/.bashrc
+ 1243  echo 'export PATH=$PATH:/home/siva/mirdeep2/src' >> ~/.bashrc
+ 1244  echo 'export PATH=$PATH:/home/siva/samtools-1.9' >> ~/.bashrc
+ 1245  echo 'export PATH=$PATH:/home/siva/ViennaRNA-2.4.16/bin' >> ~/.bashrc
+ 1246  echo 'export PATH=$PATH:/home/siva/randfold_src' >> ~/.bashrc
+ 1247  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/bin' >> ~/.bashrc
+ 1248  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/perls/perl-5.28.0/bin' >> ~/.bashrc
+ 1249  echo 'export PATH=$PATH:/home/siva/anaconda3/bin' >> ~/.bashrc
+ 1250  echo 'export PATH=$PATH:/home/siva/anaconda3/condabin' >> ~/.bashrc
+ 1251  echo 'export PATH=$PATH:/home/siva/novocraft' >> ~/.bashrc
+ 1252  echo 'export PATH=$PATH:/home/siva/mirPRo.1.1.4/bin' >> ~/.bashrc
+ 1253  echo 'export PATH=$PATH:/usr/bin/htseq-count' >> ~/.bashrc
+ 1254  echo 'export PATH=$PATH:/home/siva/mirdeep2/src' >> ~/.bashrc
+ 1255  echo 'export PATH=$PATH:/home/siva/samtools-1.9' >> ~/.bashrc
+ 1256  echo 'export PATH=$PATH:/home/siva/ViennaRNA-2.4.16/bin' >> ~/.bashrc
+ 1257  echo 'export PATH=$PATH:/home/siva/randfold_src' >> ~/.bashrc
+ 1258  bowtie
+ 1259  RNAfold -h
+ 1260  randfold
+ 1261  make_html
+ 1262  make_html.pl
+ 1263  clear
+ 1264  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/bin' >> ~/.bashrc
+ 1265  echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/perls/perl-5.28.0/bin' >> ~/.bashrc
+ 1266  echo 'export PATH=$PATH:/home/siva/anaconda3/bin' >> ~/.bashrc
+ 1267  echo 'export PATH=$PATH:/home/siva/anaconda3/condabin' >> ~/.bashrc
+ 1268  echo 'export PATH=$PATH:/home/siva/ViennaRNA-2.4.16/bin' >> ~/.bashrc
+ 1269  echo 'export PATH=$PATH:/home/siva/randfold_src' >> ~/.bashrc
+ 1270  cd mirdeep2/
+ 1271  cd ..
+ 1272  cd Documents/microRNA_data/
+ 1273  ls -l
+ 1274  clear
+ 1275  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1276  cd ..
+ 1277  cd..
+ 1278  cd  ..
+ 1279  cd bowtie/
+ 1280  pwd
+ 1281  echo 'export PATH=$PATH:/home/siva/bowtie' >> ~/.bashrc
+ 1282  clear
+ 1283  cd Documents/microRNA_data/
+ 1284  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1285  cd Documents/microRNA_data/
+ 1286  clear
+ 1287  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1288  whereis bowtie
+ 1289  locate bowtie
+ 1290  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1291  echo 'export PATH=$PATH:/home/siva/bowtie' >> ~/.bashrc
+ 1292  exit
+ 1293  cd Documents/microRNA_data/
+ 1294  miRDeep2.pl Mirdeep_miRNA/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf none none none
+ 1295  cd ..
+ 1296  cd ViennaRNA-2.4.16/
+ 1297  ls -l
+ 1298  ./configure
+ 1299  make
+ 1300  clear
+ 1301  pwd
+ 1302  ls -l
+ 1303  python -version
+ 1304  python --version
+ 1305  where is Python
+ 1306  whereis Python
+ 1307  $PATH Python
+ 1308  nano bash.src
+ 1309  nano bashrc.sh
+ 1310  $PATH
+ 1311  pwd
+ 1312  ls -l
+ 1313  conda install -c conda-forge mamba
+ 1314  clear
+ 1315  mamba create -c conda-forge -c bioconda -n snakemake snakemake
+ 1316  conda activate snakemake
+ 1317  snakemake --help
+ 1318  snakemake --version
+ 1319  exit
+ 1320  clear
+ 1321  cd Documents/microRNA_data/
+ 1322  clear
+ 1323  mapper.pl TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m /
+ 1324  -p bowtie_index/arabidopsis_genome /
+ 1325  -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa /
+ 1326  -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf /
+ 1327  -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1328  cd Mirdeep_miRNA/
+ 1329  find_read_count.pl wt-ABA-3_collapsed.fasta 
+ 1330  cd ..
+ 1331  whereis bowtie-build
+ 1332  whereis mirdeep2
+ 1333  cd ..
+ 1334  cd mirdeep2/
+ 1335  cd ..
+ 1336  cd Documents/microRNA_data/
+ 1337  clear
+ 1338  mapper.pl TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1339  mapper.pl TRIMMED/wt-ABA-1.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-1_collapsed.fa -t Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-1.txt
+ 1340  mapper.pl TRIMMED/wt-ABA-2.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-2_collapsed.fa -t Mirdeep_miRNA/wt-ABA-2_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-2.txt
+ 1341  mapper.pl TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1342  mapper.pl TRIMMED/wt-Control-1.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-1_collapsed.fa -t Mirdeep_miRNA/wt-Control-1_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-Control-1.txt
+ 1343  mapper.pl TRIMMED/wt-Control-2.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-2_collapsed.fa -t Mirdeep_miRNA/wt-Control-2_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-Control-2.txt
+ 1344  mapper.pl TRIMMED/wt-Control-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-3_collapsed.fa -t Mirdeep_miRNA/wt-Control-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-Control-3.txt
+ 1345  clear
+ 1346  quantifier.pl -p hairpin_T.fa -m mature_T.fa -r Mirdeep_miRNA/wt-ABA-1_collapsed.fa -y now -d
+ 1347  quantifier.pl -p hairpin_T.fa -m mature_T.fa -r Mirdeep_miRNA/wt-ABA-2_collapsed.fa -y now -d
+ 1348  quantifier.pl -p hairpin_T.fa -m mature_T.fa -r Mirdeep_miRNA/wt-ABA-3_collapsed.fa -y now -d
+ 1349  quantifier.pl -p hairpin_T.fa -m mature_T.fa -r Mirdeep_miRNA/wt-Control-1_collapsed.fa -y now -d
+ 1350  quantifier.pl -p hairpin_T.fa -m mature_T.fa -r Mirdeep_miRNA/wt-Control-2_collapsed.fa -y now -d
+ 1351  quantifier.pl -p hairpin_T.fa -m mature_T.fa -r Mirdeep_miRNA/wt-Control-3_collapsed.fa -y now -d
+ 1352  whereis samtools
+ 1353  whereis bowtie
+ 1354  clear
+ 1355  miRDeep2.pl Mirdeep_miRNA/wt-ABA-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf none none none 2> wt-ABA-1_report.log
+ 1356  cpan install PDF::API2
+ 1357  sudo cpan install PDF::API2
+ 1358  miRDeep2.pl Mirdeep_miRNA/wt-ABA-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf none none none 2> wt-ABA-1_report.log
+ 1359  perldoc PDF::API2
+ 1360  cd ..
+ 1361  cd PDF-API2-0.73/
+ 1362  perl Makefile.PL INSTALL_BASE=/home/siva/mirdeep2 LIB=/home/siva/mirdeep2/lib
+ 1363  cd ..
+ 1364  conda install -c bioconda perl-pdf-api2
+ 1365  perldoc PDF::API2
+ 1366  whereis PDF::API2
+ 1367  locate  PDF::API2
+ 1368  nano bashrc.sh
+ 1369  nano .bashrc
+ 1370  cd Documents/microRNA_data/
+ 1371  miRDeep2.pl Mirdeep_miRNA/wt-ABA-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf none none none 2> wt-ABA-1_report.log
+ 1372  cd ...
+ 1373  cd ..
+ 1374  tar xvvzf PDF-API2-0.73.tar.gz
+ 1375  cd PDF-API2-0.73/
+ 1376  pwd
+ 1377  perl Makefile.PL INSTALL_BASE=/home/siva/mirdeep2 LIB=/home/siva/mirdeep2/lib
+ 1378  perl Makefile.PL INSTALL_BASE=/home/siva/mirdeep2/ LIB=/home/siva/mirdeep2/lib/
+ 1379  perl Makefile.PL INSTALL_BASE=/home/siva/ LIB=/home/siva/mirdeep2/lib/
+ 1380  perl -l Makefile.PL INSTALL_BASE=/home/siva/mirdeep2/ LIB=/home/siva/mirdeep2/lib/
+ 1381  perl -l Makefile.PL INSTALL_BASE=/home/siva/mirdeep2 LIB=/home/siva/mirdeep2/lib
+ 1382  perl -l Makefile.PL INSTALL_BASE=/home/siva/ LIB=/home/siva/mirdeep2/lib
+ 1383  perl -l Makefile.PL INSTALL_BASE=/home/siva/mirdeep2/essentials/PDF-API2-XS-1.001 PREFIX=/home/siva/mirdeep2/lib LIB=/home/siva/mirdeep2/lib
+ 1384  cd ..
+ 1385  cd mirdeep2/
+ 1386  cd /home/siva/mirdeep2/essentials/PDF-API2-XS-1.001
+ 1387  perl -l Makefile.PL INSTALL_BASE=/home/siva/mirdeep2/essentials/PDF-API2-XS-1.001 PREFIX=/home/siva/mirdeep2/lib LIB=/home/siva/mirdeep2/lib
+ 1388  perl -l Makefile.PL INSTALL_BASE=/home/siva/mirdeep2/essentials/PDF-API2-XS-1.001 LIB=/home/siva/mirdeep2/lib
+ 1389  make
+ 1390  make test
+ 1391  make install
+ 1392  cd ..
+ 1393  touch install_successful
+ 1394  nano bashrc
+ 1395  nano bashrc.h
+ 1396  ls -l
+ 1397  nano .bashrc
+ 1398  clear
+ 1399  cd /home/siva/Documents/microRNA_data
+ 1400  bowtie-build Arabidopsis_thaliana.TAIR10.dna.toplevel.fa ara_gen
+ 1401  sudo apt install bowtie
+ 1402  bowtie-build Arabidopsis_thaliana.TAIR10.dna.toplevel.fa ara_gen
+ 1403  cd Documents/microRNA_data/
+ 1404  miRDeep2.pl Mirdeep_miRNA/wt-ABA-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf none none none 2> wt-ABA-1_report.log
+ 1405  cd /home/siva/mirdeep2
+ 1406  perl install.pl 
+ 1407  cd ..
+ 1408  perl -MCPAN -e 'install Bundle::Compress::Zlib'
+ 1409  cd mirdeep2/
+ 1410  perl install.pl 
+ 1411  cd ..
+ 1412  conda install -c bioconda perl-memoize
+ 1413  cd mirdeep2/
+ 1414  perl install.pl 
+ 1415  cd ..
+ 1416  % cpanm CHI::Memoize
+ 1417  perl
+ 1418  sudo cpan  CHI::Memoize
+ 1419  sudo cpan Bundle::Compress::Zlib
+ 1420  cd mirdeep2/
+ 1421  perl install.pl 
+ 1422  nano .bashrc
+ 1423  cd ..
+ 1424  nano .bashrc
+ 1425  cd Documents/microRNA_data/
+ 1426  miRDeep2.pl Mirdeep_miRNA/wt-ABA-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf none none none 2> wt-ABA-1_report.log
+ 1427  cd Documents/microRNA_data/
+ 1428  miRDeep2.pl Mirdeep_miRNA/wt-ABA-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf none none none 2> wt-ABA-1_report.log
+ 1429  cd /home/siva/PDF-API2-0.73
+ 1430  ls -l
+ 1431  perl Makefile.PL INSTALL_BASE=/home/siva/mirdeep2 LIB=/home/siva/mirdeep2/lib
+ 1432  perl -l Makefile.PL INSTALL_BASE=/home/siva/mirdeep2 LIB=/home/siva/mirdeep2/lib
+ 1433  sudo perl Makefile.PL INSTALL_BASE=/home/siva/mirdeep2 LIB=/home/siva/mirdeep2/lib
+ 1434  sudo perl Makefile.PL INSTALL_BASE=/home/siva/mirdeep2/lib/perl5/x86_64-linux/perl5/x86_64-linux/PDF/API2 LIB=/home/siva/mirdeep2/lib
+ 1435  locate Version.pm
+ 1436  cd ..
+ 1437  cd Documents/microRNA_data/
+ 1438  miRDeep2.pl Mirdeep_miRNA/wt-ABA-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-1_collapsed_vs_genome.arf -d none none none 2> wt-ABA-1_report.log
+ 1439  cd mirPRo.1.1.4/
+ 1440  fastq_quality_filter -h
+ 1441  fastx_collapser -h
+ 1442  novoindex
+ 1443  novoalign
+ 1444  randfold
+ 1445  RNAfold -h
+ 1446  htseq-count
+ 1447  whereis htseq-count
+ 1448  gcc -v
+ 1449  g++ -v
+ 1450  clear
+ 1451  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./miRNA -s null -a 'null' -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other 'null' -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1452  htseq-count
+ 1453  samtools
+ 1454  clear
+ 1455  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./miRNA -s null -a 'null' -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other 'null' -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1456  cd ..
+ 1457  sudo apt-get install python-matplotlib
+ 1458  python
+ 1459  nano .bashrc
+ 1460  cd mirPRo.1.1.4/
+ 1461  bin/mirpro_feature_pro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -t /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf -o ./miRNA
+ 1462  bin/mirpro_feature_pro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.bam -t /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf -o ./miRNA
+ 1463  bin/mirpro_feature_pro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.sorted.out.bam -t /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf -o ./miRNA
+ 1464  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./miRNA -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1465  cd mirdeep2/
+ 1466  perl install.pl
+ 1467  sudo cpan install PDF::API2
+ 1468  perl -MCPAN -e shell
+ 1469  git clone 
+ 1470  git clone https://github.com/rajewsky-lab/mirdeep2.git
+ 1471  cd mirdeep2/
+ 1472  perl install.pl
+ 1473  cd ..
+ 1474  cd Documents/microRNA_data/
+ 1475  mapper.pl /TRIMMED/wt-ABA-1.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1476  mapper.pl /TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1477  cd Documents/microRNA_data/
+ 1478  mapper.pl /TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1479  cd ..
+ 1480  cd mirdeep2/
+ 1481  perl install.pl 
+ 1482  cd Documents/microRNA_data/
+ 1483  mapper.pl /TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1484  cd Documents/microRNA_data/
+ 1485  mapper.pl /TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1486  cd ..
+ 1487  cd mirdeep2/
+ 1488  perl install.pl
+ 1489  exit
+ 1490  cd Documents/microRNA_data/
+ 1491  mapper.pl /TRIMMED/wt-ABA-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1492  mapper.pl /TRIMMED/wt-ABA-3.fastq -e -d -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1493  mapper.pl TRIMMED/wt-Control-2.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-2_collapsed.fa -t Mirdeep_miRNA/wt-Control-2_collapsed_vs_genome.arf -v
+ 1494  mapper.pl TRIMMED/wt-ABA-3.fastq -e -d -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-ABA-3_collapsed.fa -t Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -v &> Mirdeep_log/mapper_wt-ABA-3.txt
+ 1495  mapper.pl TRIMMED/wt-Control-1.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-1_collapsed.fa -t Mirdeep_miRNA/wt-Control-1_collapsed_vs_genome.arf -v
+ 1496  mapper.pl TRIMMED/wt-Control-2.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-2_collapsed.fa -t Mirdeep_miRNA/wt-Control-2_collapsed_vs_genome.arf -v 2> Mirdeep_log/mapper_wt-Control-2.txt
+ 1497  mapper.pl TRIMMED/wt-Control-1.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-1_collapsed.fa -t Mirdeep_miRNA/wt-Control-1_collapsed_vs_genome.arf -v 2> Mirdeep_log/mapper_wt-Control-1.txt
+ 1498  mapper.pl TRIMMED/wt-Control-3.fastq -e -h -j -l 18 -m -p bowtie_index/arabidopsis_genome -s Mirdeep_miRNA/wt-Control-3_collapsed.fa -t Mirdeep_miRNA/wt-Control-3_collapsed_vs_genome.arf -v 2> Mirdeep_log/mapper_wt-Control-3.txt
+ 1499  mkdir Raw_microRNA_fastq_files
+ 1500  mv *.fastq ./Raw_microRNA_fastq_files/
+ 1501  ls -l
+ 1502  bowtie-build Arabidopsis_thaliana.TAIR10.dna.toplevel.fa arabidopsis_genome
+ 1503  mv *.ebwt /index
+ 1504  mkdir index
+ 1505  mv *.ebwt /index
+ 1506  mv *.ebwt /index/
+ 1507  ls -l
+ 1508  mv *.ebwt index
+ 1509  ls -l
+ 1510  mkdir micro_RNA
+ 1511  mv * micro_RNA/
+ 1512  cp * micro_RNA/
+ 1513  cp -r * micro_RNA/
+ 1514  cd micr
+ 1515  cd micro_RNA/
+ 1516  ls -l
+ 1517  rm -r micro_RNA/
+ 1518  ls -l
+ 1519  cd ..
+ 1520  gunzip EMBOSS-6.6.0.tar.gz 
+ 1521  tar xvf EMBOSS-6.6.0.tar 
+ 1522  cd EMBOSS-6.6.0/
+ 1523  ./configure
+ 1524  make
+ 1525  ~~exit
+ 1526  exit
+ 1527  cd Documents/microRNA_data/
+ 1528  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-ABA-3 --bowtie_cores 2 --readfile TRIMMED/wt-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-ABA-3 &
+ 1529  cd Documents/microRNA_data/
+ 1530  pwd
+ 1531  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-Control-3 --bowtie_cores 2 --readfile TRIMMED/m3k18-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-Control-3 &
+ 1532  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-ABA-3 --bowtie_cores 2 --readfile TRIMMED/wt-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-ABA-3 &
+ 1533  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-1 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-1 &
+ 1534  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-3 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-3 &
+ 1535  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-Control-3 --bowtie_cores 2 --readfile TRIMMED/m3k17-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-Control-3 &
+ 1536  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-Control-2 --bowtie_cores 2 --readfile TRIMMED/wt-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-Control-2 &
+ 1537  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-ABA-1 --bowtie_cores 2 --readfile TRIMMED/abi1-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-ABA-1 &
+ 1538  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-Control-3 --bowtie_cores 2 --readfile TRIMMED/wt-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-Control-3 &
+ 1539  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-Control-1 --bowtie_cores 2 --readfile TRIMMED/m3k17-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-Control-1 &
+ 1540  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-Control-2 --bowtie_cores 2 --readfile TRIMMED/m3k17-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-Control-2 &
+ 1541  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-Control-1 --bowtie_cores 2 --readfile TRIMMED/m3k18-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-Control-1 &
+ 1542  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-ABA-1 --bowtie_cores 2 --readfile TRIMMED/m3k17-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-ABA-1 &
+ 1543  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-Control-2 --bowtie_cores 2 --readfile TRIMMED/m3k18-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-Control-2 &
+ 1544  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-ABA-3 --bowtie_cores 2 --readfile TRIMMED/m3k18-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-ABA-3 &
+ 1545  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-2 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-2 &
+ 1546  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-ABA-2 --bowtie_cores 2 --readfile TRIMMED/abi1-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-ABA-2 &
+ 1547  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-Control-1 --bowtie_cores 2 --readfile TRIMMED/wt-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-Control-1 &
+ 1548  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-ABA-2 --bowtie_cores 2 --readfile TRIMMED/m3k18-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-ABA-2 &
+ 1549  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-ABA-2 --bowtie_cores 2 --readfile TRIMMED/wt-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-ABA-2 &
+ 1550  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-ABA-1 --bowtie_cores 2 --readfile TRIMMED/m3k18-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-ABA-1 &
+ 1551  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-ABA-3 --bowtie_cores 2 --readfile TRIMMED/m3k17-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-ABA-3 &
+ 1552  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-ABA-1 --bowtie_cores 2 --readfile TRIMMED/wt-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-ABA-1 &
+ 1553  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-ABA-3 --bowtie_cores 2 --readfile TRIMMED/abi1-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-ABA-3 &
+ 1554  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-ABA-2 --bowtie_cores 2 --readfile TRIMMED/m3k17-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-ABA-2 &
+ 1555  ls -l
+ 1556  cd Documents/
+ 1557  ls -l
+ 1558  cd microRNA_data/
+ 1559  ls -l
+ 1560  cd ShortStack-Results/
+ 1561  ls -l
+ 1562  nano log_wt-ABA-3
+ 1563  nano log_wt-ABA-2
+ 1564  nano log_wt-ABA-1
+ 1565  nano log_wt-Control-1
+ 1566  nano log_wt-Control-3
+ 1567  cd wt-Control-1
+ 1568  ls -l
+ 1569  nano Counts.txt 
+ 1570  nano ErrorLogs.txt 
+ 1571  nano Results.txt 
+ 1572  nano Unplaced.txt 
+ 1573  cd MIRNAs/
+ 1574  ls -l
+ 1575  cd ..
+ 1576  rm -all
+ 1577  rm -r *
+ 1578  cd .local/share/Trash/
+ 1579  rm -rf ~/.local/share/Trash/*
+ 1580  cd ~/.local
+ 1581  cd share/
+ 1582  ls -l
+ 1583  cd Trash/
+ 1584  ls -l
+ 1585  cd expunged/
+ 1586  ls -l
+ 1587  cd 475349224/
+ 1588  ls -l
+ 1589  cd Lib/
+ 1590  ls -l
+ 1591  cd ./
+ 1592  cd /
+ 1593  ls 
+ 1594  cd /home/siva/Documents/microRNA_data
+ 1595  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-Control-3 --bowtie_cores 2 --readfile TRIMMED/m3k18-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-Control-3 &
+ 1596  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-ABA-3 --bowtie_cores 2 --readfile TRIMMED/wt-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-ABA-3 &
+ 1597  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-1 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-1 &
+ 1598  ohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-1 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-1 &
+ 1599  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-1 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-1 &
+ 1600  bin/miRDeep2.pl Mirdeep_results/wt-ABA-3_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_results/wt-ABA-3_collapsed_vs_genome.arf none none none -d 2> Mirdeep_results/wt-ABA-3_report.log
+ 1601  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-1 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-1 &
+ 1602  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-3 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-3 &
+ 1603  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-Control-3 --bowtie_cores 2 --readfile TRIMMED/m3k17-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-Control-3 &
+ 1604  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-Control-2 --bowtie_cores 2 --readfile TRIMMED/wt-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-Control-2 &
+ 1605  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-ABA-1 --bowtie_cores 2 --readfile TRIMMED/abi1-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-ABA-1 &
+ 1606  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-Control-3 --bowtie_cores 2 --readfile TRIMMED/wt-Control-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-Control-3 &
+ 1607  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-Control-1 --bowtie_cores 2 --readfile TRIMMED/m3k17-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-Control-1 &
+ 1608  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-Control-2 --bowtie_cores 2 --readfile TRIMMED/m3k17-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-Control-2 &
+ 1609  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-Control-1 --bowtie_cores 2 --readfile TRIMMED/m3k18-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-Control-1 &
+ 1610  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-ABA-1 --bowtie_cores 2 --readfile TRIMMED/m3k17-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-ABA-1 &
+ 1611  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-Control-2 --bowtie_cores 2 --readfile TRIMMED/m3k18-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-Control-2 &
+ 1612  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-ABA-3 --bowtie_cores 2 --readfile TRIMMED/m3k18-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-ABA-3 &
+ 1613  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-Control-2 --bowtie_cores 2 --readfile TRIMMED/abi1-Control-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-Control-2 &
+ 1614  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-ABA-2 --bowtie_cores 2 --readfile TRIMMED/abi1-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-ABA-2 &
+ 1615  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-Control-1 --bowtie_cores 2 --readfile TRIMMED/wt-Control-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-Control-1 &
+ 1616  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-ABA-2 --bowtie_cores 2 --readfile TRIMMED/m3k18-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-ABA-2 &
+ 1617  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-ABA-2 --bowtie_cores 2 --readfile TRIMMED/wt-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-ABA-2 &
+ 1618  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k18-ABA-1 --bowtie_cores 2 --readfile TRIMMED/m3k18-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k18-ABA-1 &
+ 1619  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-ABA-3 --bowtie_cores 2 --readfile TRIMMED/m3k17-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-ABA-3 &
+ 1620  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/wt-ABA-1 --bowtie_cores 2 --readfile TRIMMED/wt-ABA-1.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_wt-ABA-1 &
+ 1621  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/abi1-ABA-3 --bowtie_cores 2 --readfile TRIMMED/abi1-ABA-3.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_abi1-ABA-3 &
+ 1622  nohup ShortStack-master/ShortStack --outdir ShortStack-Results/m3k17-ABA-2 --bowtie_cores 2 --readfile TRIMMED/m3k17-ABA-2.fastq --genomefile Arabidopsis_thaliana_TAIR10_dna_toplevel.fa > ShortStack-Results/log_m3k17-ABA-2 &
+ 1623  do-release upgrade
+ 1624  sudo do-release-upgrade -d
+ 1625  sudo apt-get install
+ 1626  sudo apt-get upgrade
+ 1627  sudo do-release-upgrade -d
+ 1628  sudo apt-get upgrade
+ 1629  sudo do-release-upgrade -d
+ 1630  xkill
+ 1631  sudo shutdown -r now
+ 1632  python get_candidates.py 
+ 1633  python2.7 get_candidates.py 
+ 1634  python --version
+ 1635  python2 
+ 1636  cd ..
+ 1637  python2 get_candidates.py 
+ 1638  python --version
+ 1639  which python
+ 1640  sudo apt install python2
+ 1641  python2 --version
+ 1642  python2.7 get_candidates.py 
+ 1643  python2.7.17 get_candidates.py 
+ 1644  python2 get_candidates.py 
+ 1645  python3 --version
+ 1646  python -V
+ 1647  python -v
+ 1648  update-alternatives --list python
+ 1649  sudo update-alternatives --list python
+ 1650  python2.7 get_candidates.py
+ 1651  apt-get install bedtools
+ 1652  sudo apt-get install bedtools
+ 1653  sort -k1,1 -k2,2n miRNA_candidates_v2.bed > candidates.sorted_v2.bed
+ 1654  bedtools merge -i candidates.sorted_v2.bed -d -1 -s -nms > overlapping_v2.txt
+ 1655  pwd
+ 1656  cd Documents/microRNA_data/
+ 1657  python filter.py 
+ 1658  python get_fasta.py 
+ 1659  python2 get_fasta.py 
+ 1660  python format_candidates.py 
+ 1661  python2 format_candidates.py 
+ 1662  python mature.py 
+ 1663  python -V
+ 1664  python mirna_expression.py 
+ 1665  python2 mirna_expression.py 
+ 1666  python mirna_annotation.py 
+ 1667  python2 mirna_expression.py 
+ 1668  python mirna_annotation.py 
+ 1669  ls
+ 1670  cd mirdeep2/
+ 1671  ls
+ 1672  exit
+ 1673  htseq-count
+ 1674  sudo apt-get remove python-htseq
+ 1675  fastq_quality_filter -h
+ 1676  fastx_collapser -h
+ 1677  novoindex
+ 1678  novoalign
+ 1679  randfold
+ 1680  RNAfold -h
+ 1681  htseq-count
+ 1682  pip install HTSeq==0.6.1
+ 1683  wget https://files.pythonhosted.org/packages/3c/6e/f8dc3500933e036993645c3f854c4351c9028b180c6dcececde944022992/HTSeq-0.6.1p1.tar.gz
+ 1684  tar xvvzf HTSeq-0.6.1p1.tar.gz 
+ 1685  numpy
+ 1686  novoindex
+ 1687  novoalign
+ 1688  cd mirPRo.1.1.4/
+ 1689  ls
+ 1690  cd ..
+ 1691  cd novocraft/
+ 1692  ls
+ 1693  cd ..
+ 1694  pip install numpy
+ 1695  pip install --upgrade pip
+ 1696  sudo pip install --upgrade pip
+ 1697  pip install pysam
+ 1698  pysam
+ 1699  pySam
+ 1700  conda config --add channels r
+ 1701  conda config --add channels bioconda
+ 1702  conda install pysam
+ 1703  conda install numpy
+ 1704  cd HTSeq-0.6.1p1/
+ 1705  python setup.py build
+ 1706  ls
+ 1707  python2 setup.py build
+ 1708  python setup.py install
+ 1709  python2 setup.py install
+ 1710  sudo python2 setup.py install
+ 1711  cd ..
+ 1712  htseq-count
+ 1713  novoindex
+ 1714  RNAfold -h
+ 1715  htseq-count
+ 1716  gcc -v
+ 1717  g++ -v
+ 1718  ls
+ 1719  rm  HTSeq-0.6.1p1.tar.gz 
+ 1720  cd mirPRo.1.1.4/
+ 1721  pwd
+ 1722  cd bin/
+ 1723  pwd
+ 1724  /home/siva/mirPRo.1.1.4/bin
+ 1725  export PATH=$PATH:/home/siva/mirPRo.1.1.4/bin
+ 1726  /home/siva/mirPRo.1.1.4/bin
+ 1727  cd ..
+ 1728  cd Documents/microRNA_data/
+ 1729  ls
+ 1730  bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1731  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1732  pip install pysam
+ 1733  python3 -m venv env
+ 1734  source ./env/bin/activate 
+ 1735  pip install pysam
+ 1736  python3 -m venv env
+ 1737  exit
+ 1738  cd /home/siva/Documents/microRNA_data
+ 1739  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1740  pip install numpy
+ 1741  cd ..
+ 1742  cd HTSeq-0.6.1p1/
+ 1743  python setup.py build/
+ 1744  python2 setup.py build/
+ 1745  python2 setup.py build
+ 1746  python2 setup.py install
+ 1747  python setup.py build
+ 1748  sudo python2 setup.py build
+ 1749  sudo python2 setup.py install
+ 1750  cd ..
+ 1751  cd Documents/microRNA_data/
+ 1752  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1753  samtools
+ 1754  conda install -c bioconda htseq
+ 1755  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1756  conda install samtools=1.9 -y
+ 1757  samtools
+ 1758  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1759  sudo apt-get remove  python-htseq
+ 1760  sudo apt autoremove  python-htseq
+ 1761  htseq-count
+ 1762  sudo apt autoremove  python-htseq
+ 1763  htseq
+ 1764  samtools
+ 1765  sudo apt autoremove htseq
+ 1766  sudo apt-get autoremove --purge python-htseq
+ 1767  sudo apt-get autoremove python-htseq
+ 1768  htseq-count
+ 1769  htseq -h
+ 1770  htseq-count -h
+ 1771  htseq-count --version
+ 1772  locate htseq-count
+ 1773  conda remove htseq-count
+ 1774  rm -rf ~/anaconda3
+ 1775  locate htseq-count
+ 1776  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1777  cd ..
+ 1778  cd mirdeep2/
+ 1779  perl install
+ 1780  perl install.pl 
+ 1781  exit
+ 1782  cd Documents/
+ 1783  ls
+ 1784  cd microRNA_data/
+ 1785  ls
+ 1786  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1787  randfold
+ 1788  sudo apt-add-repository ppa:j-4/vienna-rna
+ 1789  sudo apt-get install vienna-rna
+ 1790  cd ..
+ 1791  cd squid-1.9g/
+ 1792  ./configure
+ 1793  make
+ 1794  make check
+ 1795  make install
+ 1796  sudo make
+ 1797  sudo make install
+ 1798  make
+ 1799  cd ..
+ 1800  ls
+ 1801  tar xzvf randfold-2.0.tar.gz 
+ 1802  cd randfold-2.0/
+ 1803  make
+ 1804  apt-get install pkg_resources
+ 1805  apt-get install python-setuptools
+ 1806  sudo apt update && apt upgrade
+ 1807  exit
+ 1808  cp randfold /usr/local/bin
+ 1809  exit
+ 1810  cd ViennaRNA-2.4.16/
+ 1811  ./configure
+ 1812  make
+ 1813  randfold
+ 1814  locate htseq-count
+ 1815  pip install pysam
+ 1816  sudo apt-get install gcc
+ 1817  sudo apt-get install make
+ 1818  sudo apt-get update
+ 1819  sudo pip install pysam
+ 1820  cd ..
+ 1821  cd Documents/microRNA_data/
+ 1822  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1823  ls /usr/bin/python*
+ 1824  sudo apt-get remove python3
+ 1825  ls /usr/bin/python*
+ 1826  apt --fix-broken install
+ 1827  sudo apt --fix-broken install
+ 1828  sudo apt autoremove python3
+ 1829  ls /usr/bin/python*
+ 1830  sudo apt install gnome
+ 1831  ls /usr/bin/python*
+ 1832  sudo apt autoremove python
+ 1833  ls /usr/bin/python*
+ 1834  sudo apt-get autoremove python
+ 1835  python --version
+ 1836  python -V
+ 1837  sudo apt-get update
+ 1838  cd /
+ 1839  wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-ppc64le.sh
+ 1840  sudo
+ 1841  cat /etc/os-release
+ 1842  sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+ 1843  sha256sum /path/filename
+ 1844  Get-FileHash filename -Algorithm SHA256
+ 1845  ls
+ 1846  cd home/
+ 1847  ls
+ 1848  cd siva/
+ 1849  ls
+ 1850  cd ..
+ 1851  pwd
+ 1852  cd siva/
+ 1853  ls
+ 1854  gzip PsFCIV_2.5.zip 
+ 1855  gunzip PsFCIV_2.5.zip.gz 
+ 1856  sha256sum PsFCIV_2.5.ps1 
+ 1857  ls
+ 1858  bash Anaconda3-2020.11-Linux-ppc64le.sh 
+ 1859  ls
+ 1860  bash Miniconda2-latest-Linux-x86_64.sh 
+ 1861  conda update conda
+ 1862  conda init fish
+ 1863  conda list
+ 1864  pwd
+ 1865  cd miniconda2/
+ 1866  cd bin/
+ 1867  pwd
+ 1868  /home/siva/miniconda2/bin
+ 1869  export PATH=/home/siva/miniconda2/bin
+ 1870  export PATH=/home/siva/miniconda2/bin:$PATH
+ 1871  conda 
+ 1872  conda list
+ 1873  conda init fish
+ 1874  conda update conda
+ 1875  conda install pysam
+ 1876  cd ..
+ 1877  ls /usr/bin/python*
+ 1878  pwd
+ 1879  ls
+ 1880  sudo apt-get update
+ 1881  export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+ 1882  ls
+ 1883  sudo apt-get update
+ 1884  ls /usr/bin/python*
+ 1885  alias python='/usr/bin/python2.7
+ 1886  . ~/.bashrc
+ 1887  exot
+ 1888  exit
+ 1889  ls /usr/bin/python*
+ 1890  python --versoin
+ 1891  python --version
+ 1892  update-alternatives --list python
+ 1893  sudo apt-add-repository ppa:j-4/vienna-rna
+ 1894  fastq_quality_filter -h
+ 1895  fastx_collapser -h
+ 1896  novoindex
+ 1897  cd novocraft/
+ 1898  ls
+ 1899  pwd
+ 1900  /home/siva/novocraft
+ 1901  export PATH=$PATH:/home/siva/novocraft
+ 1902  novoindex
+ 1903  novoalign
+ 1904  randfold
+ 1905  locate randfold
+ 1906  pwd
+ 1907  cd ..
+ 1908  RNAfold -h
+ 1909  htseq-count
+ 1910  pip install HTSeq==0.6.1p1
+ 1911  sudo pip install HTSeq==0.6.1p1
+ 1912  htseq-count
+ 1913  sudo apt-get install pkg_resources
+ 1914  pip install setuptools
+ 1915  sudo apt-get install pkg_resources
+ 1916  apt-get install python-setuptools
+ 1917  sudo
+ 1918  sudo -s
+ 1919  sudo pip install HTSeq==0.6.1p1
+ 1920  htseq-count
+ 1921  RNAfold -h
+ 1922  randfold
+ 1923  cd randfold-2.0/
+ 1924  make
+ 1925  cd ..
+ 1926  cd randfold_src/
+ 1927  cd src/
+ 1928  make
+ 1929  randfold
+ 1930  path
+ 1931  touch PATH
+ 1932  $PATH
+ 1933  cp randfold /usr/local/bin
+ 1934  sudo -s
+ 1935  randfold
+ 1936  ls
+ 1937  rm randfold-2.0.tar.gz 
+ 1938  rm randfold-2.0
+ 1939  rm -r randfold-2.0
+ 1940  ls
+ 1941  randfold
+ 1942  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1943  pwd
+ 1944  mv -r mirPro_results/ /home/siva/Documents/microRNA_data
+ 1945  mv mirPro_results/ /home/siva/Documents/microRNA_data
+ 1946  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> /mirPro_results/wt-Control-1.txt
+ 1947  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> mirPro_results/wt-Control-1.txt
+ 1948  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> ./mirPro_results/wt-Control-1.txt
+ 1949  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> ./mirPro_results/wt_Control_1.txt
+ 1950  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> mirpro_wt_Control_1.txt
+ 1951  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> mirpro_wt_Control_2.txt
+ 1952  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> mirpro_wt_Control_3.txt
+ 1953  cd Documents/microRNA_data/
+ 1954  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-2.fastq
+ 1955  /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-2.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1956  sudo qpt-get update
+ 1957  sudo nano /etc/NetworkManager/NetworkManager.conf
+ 1958  sudo service network-manager restart
+ 1959  sudo touch /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
+ 1960  sudo systemct1 restart NetworkManager
+ 1961  sudo dhclient
+ 1962  sudo apt-get update
+ 1963  sudo apt-get upgrade
+ 1964  sudo snap install notepad-plus-plus
+ 1965  sudo apt-get upgrade
+ 1966  sudo apt-get update
+ 1967  nohup /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-2.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx
+ 1968* nohup /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-Control-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-2.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k18-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/wt-ABA-1.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/abi1-ABA-3.fastq -i /home/siva/Documents/microRNA_data/TRIMMED/m3k17-ABA-2.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx >mirpro_scipt.txt 2>ran_scrip.txt
+ 1969  history >hist.txt
+ 1970  pwd
+ 1971  cd Documents/Webinar/
+ 1972  mv * /home/siva/Documents/
+ 1973  cd ..
+ 1974  rmdr Webinar/
+ 1975  rm Webinar/
+ 1976  rm -r Webinar/
+ 1977  cd microRNA_data/
+ 1978  ls
+ 1979  scp -r fastX_toolkit_STATUS/ sivkri@eagle.man.poznan.pl:/microRNA_sequencing
+ 1980  scp -r fastX_toolkit_STATUS/ sivkri@eagle.man.poznan.pl
+ 1981  sftp -r fastX_toolkit_STATUS/ sivkri@eagle.man.poznan.pl
+ 1982  ssh transfer
+ 1983  sftp 
+ 1984  pwd
+ 1985  ssh sivkri@eagle.man.poznan.pl
+ 1986  ssh sivkri@eagle.man.poznan.pl
+ 1987  sudo apt get-update && sudo apt-get upgrade
+ 1988  sudo apt-get update && sudo apt-get upgrade
+ 1989  ububtu --version
+ 1990  ubuntu --version
+ 1991  chdsk
+ 1992  lsb_release -a
+ 1993  uname -mrs
+ 1994  sudo apt list --upgradable
+ 1995  sudo apt upgrade
+ 1996  exit
+ 1997  cd Documents/microRNA_data/
+ 1998  ls
+ 1999  history 2>ran_script.txt
+ 2000  history &> ran_script.txt
