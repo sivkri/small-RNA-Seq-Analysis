@@ -1,5 +1,7 @@
 # miRNA-genome mapping using mirdeep2 and mirpro
 
+PS: I have removed some of the output files, since github allows upto 25 MB
+
 #!/bin/bash -l
 
 #SBATCH -J micro_map
