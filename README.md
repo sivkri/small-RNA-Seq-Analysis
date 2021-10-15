@@ -165,71 +165,7 @@ Step 4: Running the miRDeep2 for your sample
 
 
 ###########################################################
-#miRDeep2 uses Bowtie 1 to index the genome:
-bowtie-build AY509253.2.fa AY509253.2_index
-#Next, use the mapper.pl script to map your sequenced reads to the genome:
-mapper.pl small_RNA_trimmed.fastq -e -h -l 17 -p AY509253.2_index -m -s AY509253.2_collapsed.fa -t AY509253.2_mapped.arf -v
-#Since you have gone this far, you should finish the miRDeep2 analysis. It only takes one more line of code:
-miRDeep2.pl AY509253.2_collapsed.fa AY509253.2.fa AY509253.2_mapped.arf none none none 2> AY509253.2.log
-#The files you will need for MIREAP are:
-mireap.pl -i <smrna.fa> -m <map.txt> -r <reference.fa> -o <outdir>
-
-AY509253.2.fa '-r'
-AY509253.2_collapsed.fa '-i'
-AY509253.2_mapped.arf '-m'
-
-The first step in pre processing for MIREAP (AND miRDeep2 analysis)is to remove whitespaces from the header of the reference genome. I did this in a text editor, if you are working with Viral genomes the chances are it is one large contig and wont have multiple headers in the reference genome file.
-The next step is to separate the sequence ID and the read count in the headers of AY509253.2_collapsed.fa. Pre processing, they should look like this, where read counts directly follow '_x', with no whitespace.
-
->seq_0_x14029989
-TCGGTGGGACTTTCGTTCGATT
->seq_14029989_x9481962
-AACCCGTAGATCCGAACTTGTG
->seq_23511951_x8078382
-TGACTAGATCCACACTCATCC
-
-#Use this following code to separate the two:
-sed -i 's/x/x /g' AY509253.2_collapsed.fa
-
-#and inspect file after:
-head AY509253.2_collapsed.fa
->seq_0_x 14029989
-TCGGTGGGACTTTCGTTCGATT
->seq_14029989_x 9481962
-AACCCGTAGATCCGAACTTGTG
->seq_23511951_x 8078382
-TGACTAGATCCACACTCATCC
-
-#Finally, to supply the map.txt file for MIREAP, extract the read_ID, chr_ID, start, end, strand(+/-) fields from AY509253.2_mapped.arf:
-awk '{print $1'\t'$6'\t'$8'\t'$9'\t'$11}' AY509253.2_mapped.arf > AY509253.2_map_tmp.txt
-
-#<edit> I recently ran this code and it did not preserve the tab delimiter.
-#The below command will generate the example output below. <edit>
-awk 'BEGIN {OFS="\t"} {print $1,$6,$8,$9,$11}' AY509253.2_mapped.arf > AY509253.2_map_tmp.txt
-
-#Once again, the first column of AY509253.2_map_tmp.txt will have the sequence ID and the read count joined together:
- seq_244718376_x52  AY509253.2  161202  161218  +
- seq_244958036_x50  AY509253.2  136834  136857  -
- seq_245416228_x47  AY509253.2  128123  128144  +
-#run the following script to generate a properly formatted 'map.txt' file:
-
-#!/bin/bash
-
-sed 's/x.*/x/' AY509253.2_map_tmp.txt > col1.txt
-awk 'FNR==NR{a[NR]=$1;next}{$1=a[FNR]}1' col1.txt AY509253.2_map_tmp.txt > mireap_map.txt
-rm AY509253.2_map_tmp.txt
-tr ' ' '\t' < mireap_map.txt > AY509253.2_map.txt
-rm mireap_map.txt
-rm col1.txt
-
-#Inspect MIREAP mapping file:
-
-seq_244718376_x AY509253.2  161202  161218  +
-seq_244958036_x AY509253.2  136834  136857  -
-seq_245416228_x AY509253.2  128123  128144  +
-
-#Now run MIREAP :)
-mireap.pl -i AY509253.2_collapsed.fa -m AY509253.2_map.txt -r AY509253.2.fa -A 17 -t AY509253.2 -o ./AY509253.2
+Some other useful links to be considered
 
 Ref : https://www.biostars.org/p/213088/
 
