@@ -96,78 +96,15 @@ miRDeep2.pl reads_collapsed.fa cel_cluster.fa reads_collapsed_vs_genome.arf matu
 $ dos2unix 
 miRDeep2.pl Mirdeep_miRNA/wt-Control-1_collapsed.fa Arabidopsis_thaliana.TAIR10.dna.toplevel.fa Mirdeep_miRNA/wt-ABA-3_collapsed_vs_genome.arf -d none none none 2> wt-Control-1_report.log
 
-
 #Step 5: browse the results.
 results.html
 
 ################################################################################
-
-Ref:https://fatmab-dincaslan.medium.com/mirdeep2-mirna-sequencing-analysis-example-run-by-using-ubuntu-terminal-7922595bb375
-
-#Step 2: Downloading miRDeep2 with conda install
-(base):~$ sudo apt-get update
-(base):~$ sudo apt-get upgrade
-(base):~$ cd /mnt/c/Users/USER/Downloads/
-(base):~$ sha256sum  /mnt/c/Users/USER/Downloads/Anaconda3-2019.10-Linux-x86_64.sh 
-(base):/mnt/c/Users/USER/Downloads$ bash /mnt/c/Users/USER/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
-(base):/mnt/c/Users/USER/Downloads$ source ~/.bashrc
-(base):/mnt/c/Users/USER/Downloads$ conda config --set auto_activate_base
-(base):/mnt/c/Users/USER/Downloads$ conda config --set auto_activate_base True
-(base):/mnt/c/Users/USER/Downloads$ conda list
-(base):/mnt/c/Users/USER/Downloads$ conda install -c bioconda mirdeep2
-(base):/mnt/c/Users/USER/Downloads$ mapper.pl
-
-#Step 3: Running the Tutorial for MiRDeep2
-(base):/mnt/c/Users/USER/Downloads$ cd drmirdeep.github.io-master/
-#cd command is used to open files in the given path/directory. You need to chose the directory that you download the tutorial file */
-#ls is to list the files in the given folder*/
-(base):/mnt/c/Users/USER/Downloads/drmirdeep.github.io-master$ ls
-(base):/mnt/c/Users/USER/Downloads/drmirdeep.github.io-master$ cd drmirdeep.github.io-master/
-(base):/mnt/c/Users/USER/Downloads/drmirdeep.github.io-master/drmirdeep.github.io-master$ ls
-#grep to check how many of the reads have the adapter sequence
-(base):/mnt/c/Users/USER/Downloads/drmirdeep.github.io-master/drmirdeep.github.io-master$ grep -c TGGAATTC example_small_rna_file.fastq
-
-#do not forget the extract the relevant files from mature and hairpin miRNA files you downloaded from mirbase.
-(base):/mnt/c/Users/USER/Downloads$ extract_miRNAs.pl /mnt/c/Users/USER/Downloads/mature.fa hsa > /mnt/c/Users/USER/Downloads/mature_hsa.fa  
-(base):/mnt/c/Users/USER/Downloads$ extract_miRNAs.pl /mnt/c/Users/USER/Downloads/hairpin.fa hsa > /mnt/c/Users/USER/Downloads/hairpin_hsa.fa  
-(base):/mnt/c/Users/USER/Downloads$ extract_miRNAs.pl /mnt/c/Users/USER/Downloads/mature.fa mmu,chi > /mnt/c/Users/USER/Downloads/mature_other_hsa.fa
- 
-#to build index file via bowtie1
-#make sure that you do not use the same name for the file you give as input, reference genome, and indexed output.
-(base):/mnt/c/Users/USER/Downloads/drmirdeep.github.io-master/drmirdeep.github.io-master
-$ bowtie-build refdb.fa refdb.fa
-
-#to map the sample sequencing reads against the indexed genome file
-(base):/mnt/c/Users/USER/Downloads/drmirdeep.github.io-master/drmirdeep.github.io-master
-$ mapper.pl example_small_rna_file.fastq -e -h -i -j -k TGGAATTC -l 18 -m -p refdb.fa -s reads_collapsed.fa -t reads_vs_refdb.arf -v -o 4
-
-#to run the mirdeep2 analysis. You can find the detailed information regarding the parameters in the paper and the tutorial page.
-(base):/mnt/c/Users/USER/Downloads/drmirdeep.github.io-master/drmirdeep.github.io-master
-$ miRDeep2.pl reads_collapsed.fa refdb.fa reads_vs_refdb.arf mature_ref.fa mature_other.fa hairpin_ref.fa -t hsa 2>report.log
-
-
-Step 4: Running the miRDeep2 for your sample
-#for fastqc
-(base):/mnt/c/Users/USER/Downloads$ sudo apt-get update
-(base):/mnt/c/Users/USER/Downloads$ sudo apt-get install fastqc
-(base):/mnt/c/Users/USER/Downloads$ fastqc --extract /mnt/c/Users/USER/Downloads/S26.fastq.gz -o /mnt/c/Users/USER/Downloads/fastqc_results
-#for cutadapt and fastqc after
-#Lets say your adapter sequence is this: TAGCTGATCGATCTGAAACT
-(base):/mnt/c/Users/USER/Downloads$ conda install -c bioconda cutadapt
-(base):/mnt/c/Users/USER/Downloads$ cutadapt -a TAGCTGATCGATCTGAAACT /mnt/c/Users/USER/Downloads/S26.fastq > /mnt/c/Users/USER/Downloads/outputS26.fastq
-(base):/mnt/c/Users/USER/Downloads$ fastqc --extract /mnt/c/Users/USER/Downloads/outputS26.fastq -o /mnt/c/Users/USER/Downloads 
-#before this step, you need to download a reference file in fasta/fa format.
-(base):/mnt/c/Users/USER/Downloads$ bowtie-build ucsc_hg19.fasta ucschg19
-#You do not need to add .fa extension to file that you index
-(base):/mnt/c/Users/USER/Downloads$ mapper.pl S26.fastq -e -h -i -j -k TAGCTGATCGATCTGAAACT-l 18 -m -p ucschg19 -s R___collapsed.fa -t R___refdb.arf -v -o 4
-#You need to use index file as a reference here
-(base):/mnt/c/Users/USER/Downloads$ miRDeep2.pl R___collapsed.fa ucsc_hg19.fasta R___refdb.arf mature_hsa.fa mature_other_hsa.fa hairpin_hsa.fa -t hsa 2> report.log
-
-
-###########################################################
 Some other useful links to be considered
 
-Ref : https://www.biostars.org/p/213088/
+https://fatmab-dincaslan.medium.com/mirdeep2-mirna-sequencing-analysis-example-run-by-using-ubuntu-terminal-7922595bb375
+
+https://www.biostars.org/p/213088/
 
 ###############################################
 
