@@ -16,6 +16,7 @@ module load gcc/4.9.4
 module load bcftools/1.2
 
 ##########################################################
+
 /home/siva/mirPRo.1.1.4/bin/mirpro 
 -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq 
 -m /home/siva/Documents/microRNA_data/mature_T.fa 
@@ -27,11 +28,13 @@ module load bcftools/1.2
 --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> ./mirPro_results/wt_Control_1.txt
 
 #################################################################
+
 bin/mirpro_feature_pro -i /home/siva/Documents/microRNA_data/TRIMMED/wt_Control_1.sorted.out.bam 
 -t /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf 
 -o ./miRNA
 
 #################################################################
+
 nohup /home/siva/mirPRo.1.1.4/bin/mirpro 
 -i /home/siva/Documents/microRNA_data/TRIMMED/wt_Control_1.fastq 
 -m /home/siva/Documents/microRNA_data/mature_T.fa 
@@ -61,6 +64,7 @@ manatee
 -annotation /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf
 
 ################################################################
+
 echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:/home/siva/perl5/perlbrew/perls/perl-5.28.0/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:/home/siva/anaconda3/bin' >> ~/.bashrc
@@ -100,6 +104,7 @@ miRDeep2.pl Mirdeep_miRNA/wt-Control-1_collapsed.fa Arabidopsis_thaliana.TAIR10.
 results.html
 
 ################################################################################
+
 Some other useful links to be considered
 
 https://fatmab-dincaslan.medium.com/mirdeep2-mirna-sequencing-analysis-example-run-by-using-ubuntu-terminal-7922595bb375
