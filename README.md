@@ -1,5 +1,7 @@
 # miRNA-genome mapping using mirdeep2 and mirpro
 
+The below sample script is used for https://doi.org/10.3390/ijms22137153
+
 PS: I have removed some of the output files, since github allows upto 25 MB
 
 #!/bin/bash -l
