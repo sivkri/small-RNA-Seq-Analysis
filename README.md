@@ -1,4 +1,4 @@
-# miRNA-genome mapping using mirdeep2
+# miRNA-genome mapping using mirdeep2 and mirpro
 
 
 
