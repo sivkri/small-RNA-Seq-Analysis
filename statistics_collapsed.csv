@@ -1,0 +1,4 @@
+The collapsed read-based statistics of whole miRNA analysis,,,,,
+,,,,,
+sample,total collapsed reads,collapsed reads mapped to novel pre-miRNAs (hairpins),% of collapsed reads mapped to novel pre-miRNAs (hairpins) among total collapsed reads,collapsed reads counted as novel mature miRNAs,% of collapsed reads counted as novel mature miRNAs among total collapsed reads
+wt-Control-1,1187636,253,0.0213028,81,0.00682027

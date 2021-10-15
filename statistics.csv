@@ -1,0 +1,4 @@
+The individual read-based statistics of whole miRNA analysis,,,,,,,,
+,,,,,,,,
+sample,total raw reads,final clean reads mapped to novel pre-miRNAs (hairpins),% of final clean reads mapped to novel pre-miRNAs (hairpins) among total raw reads,final clean reads counted as novel mature miRNAs,% of final clean reads counted as novel mature miRNA among total raw reads,novel mature miRNAs in all samples,novel mature miRNAs found in this sample,% of novel mature miRNAs found in this sample among all novel mature miRNAs found in all samples
+wt-Control-1,9133313,2228,0.0243942,1786,0.0195548,77,70,90.9091

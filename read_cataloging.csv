@@ -1,0 +1,16 @@
+The read cataloging results based on genome annotation in all samples,
+,
+filename,./mirPro_results_1/run/wt-Control-1/result.summary.csv
+__alignment_not_unique,6041181
+__ambiguous,62487
+__no_feature,757602
+__not_aligned,1439835
+lncRNA,11143
+miRNA,252774
+ncRNA,39807
+nontranslating_CDS,325
+protein_coding,247293
+rRNA,110439
+snRNA,2932
+snoRNA,26817
+tRNA,140678
