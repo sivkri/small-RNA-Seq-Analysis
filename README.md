@@ -1,6 +1,6 @@
-# microRNA-length-size-distribution
+# miRNA-genome mapping using mirdeep2
 
-miRNA Length size distribution from RAW Data
+
 
 #!/bin/bash -l
 #SBATCH -J micro_map
