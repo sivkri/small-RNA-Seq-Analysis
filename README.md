@@ -1,3 +1,4 @@
+# mirRNA-Seq-Analysis
 # miRNA-genome mapping using mirdeep2 and mirpro
 
 This repository contains a sample script for performing microRNA analysis using the software package mirPRo and miRDeep2. The script is specifically designed for the dataset available at [https://doi.org/10.3390/ijms22137153](https://doi.org/10.3390/ijms22137153).
