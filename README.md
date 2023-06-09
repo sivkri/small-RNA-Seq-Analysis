@@ -140,7 +140,7 @@ To run the analysis, follow these steps:
    - Prepare the reference files: `mature_T.fa`, `hairpin_T.fa`, `Arabidopsis_thaliana.TAIR10.42.gtf`, and `Arabidopsis_thaliana.TAIR10.dna.toplevel.fa` at their respective locations.
 
 3. Execute the following commands to run the analysis:
-
+```bash
 # Step 1: Run mirpro
 /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> ./mirPro_results/wt_Control_1.txt
 
