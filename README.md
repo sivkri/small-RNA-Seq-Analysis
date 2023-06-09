@@ -9,21 +9,18 @@ To run the analysis, follow these steps:
 1. Ensure that the required modules are loaded by executing the following commands:
    ```bash
    #!/bin/bash -l
-#SBATCH -J micro_map
-#SBATCH -N 1 
-#SBATCH --ntasks-per-node 4
-#SBATCH --mem 4gb
-#SBATCH --time=01:00:00
-#SBATCH --mail-type=ALL 
+   #SBATCH -J micro_map
+   #SBATCH -N 1 
+   #SBATCH --ntasks-per-node 4
+   #SBATCH --mem 4gb
+   #SBATCH --time=01:00:00
+   #SBATCH --mail-type=ALL 
 
    module load fastx-toolkit/0.0.14
    module load htslib/1.2.1
    module load gcc/4.9.4
    module load bcftools/1.2
    ```
-
-
-
 
 2. Prepare the necessary input files and directories:
    - Place the trimmed FASTQ file at `/home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq`.
