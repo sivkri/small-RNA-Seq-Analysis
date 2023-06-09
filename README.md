@@ -141,21 +141,18 @@ To run the analysis, follow these steps:
 
 3. Execute the following commands to run the analysis:
 
-   ```bash
-   # Step 1: Run mirpro
-   /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> ./mirPro_results/wt_Control_1.txt
+# Step 1: Run mirpro
+/home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results -s null -a null -q 0 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &> ./mirPro_results/wt_Control_1.txt
 
-   # Step 2: Run mirpro_feature_pro
-   bin/mirpro_feature_pro -i /home/siva/Documents/microRNA_data/TRIMMED/wt_Control_1.sorted.out.bam -t /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf -o ./miRNA
+# Step 2: Run mirpro_feature_pro
+bin/mirpro_feature_pro -i /home/siva/Documents/microRNA_data/TRIMMED/wt_Control_1.sorted.out.bam -t /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf -o ./miRNA
 
-   # Step 3: Run mirpro with additional options
-   nohup /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt_Control_1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results_1 -s null -a null -q 0 --seed 1 --map-detail 1 -v 1 --arm 1 -c 1 --map-len 15 --map-score 60 --5-upstream 3 --3-upstream 3 --5-downstream 3 --3-downstream 3 -n 0 -r 1 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/micro
+# Step 3: Run mirpro with additional options
+nohup /home/siva/mirPRo.1.1.4/bin/mirpro -i /home/siva/Documents/microRNA_data/TRIMMED/wt_Control_1.fastq -m /home/siva/Documents/microRNA_data/mature_T.fa -p /home/siva/Documents/microRNA_data/hairpin_T.fa -d ./mirPro_results_1 -s null -a null -q 0 --seed 1 --map-detail 1 -v 1 --arm 1 -c 1 --map-len 15 --map-score 60 --5-upstream 3 --3-upstream 3 --5-downstream 3 --3-downstream 3 -n 0 -r 1 --gtf /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf --novel 1 --other null -g /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa --index /home/siva/Documents/microRNA_data/ath_tair10.idx &>mirpro_scipt_1.txt
 
-RNA_data/ath_tair10.idx &>mirpro_scipt_1.txt
-
-   # Step 4: Run manatee
-   manatee -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -o /home/siva/Documents/microRNA_data/Manatee -index /home/siva/Documents/microRNA_data/bowtie_index/arabidopsis_genome -genome /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa -annotation /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf
-   ```
+# Step 4: Run manatee
+manatee -i /home/siva/Documents/microRNA_data/TRIMMED/wt-Control-1.fastq -o /home/siva/Documents/microRNA_data/Manatee -index /home/siva/Documents/microRNA_data/bowtie_index/arabidopsis_genome -genome /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa -annotation /home/siva/Documents/microRNA_data/Arabidopsis_thaliana.TAIR10.42.gtf
+ ```
 
 4. Additional steps and useful links:
    - Exporting paths to `bashrc` file:
@@ -192,8 +189,6 @@ RNA_data/ath_tair10.idx &>mirpro_scipt_1.txt
 ### Additional Resources
 
 For more information on the usage of mirPRo and miRDeep2, please refer to the following resources:
-
-
 
 - [Mirdeep2 miRNA Sequencing Analysis Example](https://fatmab-dincaslan.medium.com/mirdeep2-mirna-sequencing-analysis-example-run-by-using-ubuntu-terminal-7922595bb375)
 - [miRDeep2 Documentation](https://www.mdc-berlin.de/content/mirdeep2-documentation)
